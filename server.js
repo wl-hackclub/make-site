@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post('/email', (req, res) => {
+  if (req.body.email === "") return res.redirect('/');
   console.log("received email " + req.body.email);
   
   base('Make Site').create({"Email": req.body.email}, function(err, record) {
