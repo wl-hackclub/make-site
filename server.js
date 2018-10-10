@@ -1,17 +1,37 @@
-// server.js
-// where your node app starts
-
-// init project
 var express = require('express');
 var app = express();
+var http = require('http').Server(app);
+var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
-
-// http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-// http://expressjs.com/en/starter/basic-routing.html
+app.post('/email', (req, res) => {
+  console.log("received email " + req.body.email);
+  
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'mattbstanciu@gmail.com',
+      pass: process.env.GMAIL_PASS
+    }
+  });
+  
+  var mailOptions = {
+    from: 'mattbstanciu@gmail.com',
+    to: 'mattbstanciu@gmail.com',
+    subject: 'New info signup',
+    text: req.body.email
+  };
+  transporter.sendMail(mailOptions, function(err, data) {
+    if (err) return console.log(err);
+    console.log("Email sent: " + data.response);
+    return res.redirect('/added');
+  }); 
+});
+
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
@@ -19,7 +39,4 @@ app.get('/added', (request, response) => {
   response.sendFile(__dirname + '/views/added.html');
 })
 
-// listen for requests :)
-var listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+http.listen(3000);
