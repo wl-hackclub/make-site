@@ -3,6 +3,8 @@ var app = express();
 var http = require('http').Server(app);
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
+var Airtable = require('airtable');
+var base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base('appwP3VsP6PEeLBKM');
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -10,6 +12,11 @@ app.use(bodyParser.json());
 
 app.post('/email', (req, res) => {
   console.log("received email " + req.body.email);
+  
+  base('Make Site').create({"Email": req.body.email}, function(err, record) {
+    if (err) { console.error(err); return; }
+    console.log("New Airtable record created: " + record.getId());
+  });
   
   var transporter = nodemailer.createTransport({
     service: 'gmail',
