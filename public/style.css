@@ -69,42 +69,42 @@ body, html {
     src: url("https://cdn.glitch.com/b93ccff4-c0b0-40d9-b578-973b8d482cce%2Faverta-bold.woff?1535838836480");
   }
   @font-face {
-      font-family: 'Averta';
-      src: url("./averta-regular.ttf");
+    font-family: 'Averta';
+    src: url("./averta-regular.ttf");
   }
   
   @-webkit-keyframes Gradient {
-      0% {
-          background-position: 0% 50%
-      }
-      50% {
-          background-position: 100% 50%
-      }
-      100% {
-          background-position: 0% 50%
-      }
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
   }
   
   @-moz-keyframes Gradient {
-      0% {
-          background-position: 0% 50%
-      }
-      50% {
-          background-position: 100% 50%
-      }
-      100% {
-          background-position: 0% 50%
-      }
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
   }
   
   @keyframes Gradient {
-      0% {
-          background-position: 0% 50%
-      }
-      50% {
-          background-position: 100% 50%
-      }
-      100% {
-          background-position: 0% 50%
-      }
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
   }
