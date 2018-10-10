@@ -15,6 +15,9 @@ app.use(express.static('public'));
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
+app.get('/added', (request, response) => {
+  response.sendFile(__dirname + '/views/added.html');
+})
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function() {

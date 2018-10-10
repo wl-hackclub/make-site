@@ -34,6 +34,13 @@ body, html {
       -moz-animation: Gradient 15s ease infinite;
       animation: Gradient 15s ease infinite;
   }
+  img {
+      width: 150px;
+      height: 69px;
+      position: absolute;
+      left:0;
+      top:0;
+  }
   a {
     color: white;
     transition: 0.3s;
@@ -69,42 +76,42 @@ body, html {
     src: url("https://cdn.glitch.com/b93ccff4-c0b0-40d9-b578-973b8d482cce%2Faverta-bold.woff?1535838836480");
   }
   @font-face {
-    font-family: 'Averta';
-    src: url("./averta-regular.ttf");
+      font-family: 'Averta';
+      src: url("https://hackclub.com/fonts/averta-regular.woff");
   }
   
   @-webkit-keyframes Gradient {
-    0% {
-        background-position: 0% 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0% 50%
-    }
+      0% {
+          background-position: 0% 50%
+      }
+      50% {
+          background-position: 100% 50%
+      }
+      100% {
+          background-position: 0% 50%
+      }
   }
   
   @-moz-keyframes Gradient {
-    0% {
-        background-position: 0% 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0% 50%
-    }
+      0% {
+          background-position: 0% 50%
+      }
+      50% {
+          background-position: 100% 50%
+      }
+      100% {
+          background-position: 0% 50%
+      }
   }
   
   @keyframes Gradient {
-    0% {
-        background-position: 0% 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0% 50%
-    }
+      0% {
+          background-position: 0% 50%
+      }
+      50% {
+          background-position: 100% 50%
+      }
+      100% {
+          background-position: 0% 50%
+      }
   }
